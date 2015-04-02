@@ -1,0 +1,15 @@
+{
+    "name": "inviqa/magento-composer-autoloader",
+    "type": "magento-module",
+    "license": "proprietary",
+    "description": "Adds Composer Autoloader to Magento",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "magento-root-dir": "./"
+    }
+}

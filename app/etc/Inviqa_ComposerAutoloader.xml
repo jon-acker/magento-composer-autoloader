@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Inviqa_ComposerAutoloader>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Inviqa_ComposerAutoloader>
+    </modules>
+</config>

@@ -1,0 +1,57 @@
+<config>
+    <modules>
+        <Inviqa_ComposerAutoloader>
+            <version>0.1.0</version>
+        </Inviqa_ComposerAutoloader>
+    </modules>
+    <global>
+        <resources>
+            <composerautoloader_setup>
+                <setup>
+                    <module>Inviqa_ComposerAutoloader</module>
+                </setup>
+            </composerautoloader_setup>
+        </resources>
+        <events>
+            <resource_get_tablename>
+                <observers>
+                    <magento_startup_observer>
+                        <type>singleton</type>
+                        <class>Inviqa_ComposerAutoloader_Model_Observer</class>
+                        <method>initialise</method>
+                    </magento_startup_observer>
+                </observers>
+            </resource_get_tablename>
+        </events>
+    </global>
+    <default>
+        <composer>
+            <composerautoloader>
+                <composerautoloader_path>../vendor/autoload.php</composerautoloader_path>
+            </composerautoloader>
+        </composer>
+    </default>
+
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <composer>
+                                            <title>Composer</title>
+                                        </composer>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+
+</config>
