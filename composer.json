@@ -3,14 +3,13 @@
     "type": "magento-module",
     "license": "proprietary",
     "description": "Adds Composer Autoloader to Magento",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.firegento.com"
+        }
+    ],
     "require": {
-        "php": ">=5.3.0",
         "magento-hackathon/magento-composer-installer": "*"
-    },
-    "config": {
-        "bin-dir": "bin"
-    },
-    "extra": {
-        "magento-root-dir": "./"
     }
 }
