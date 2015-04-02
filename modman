@@ -1,0 +1,2 @@
+app/code/community/Inviqa/ComposerAutoloader public/app/code/community/Inviqa/ComposerAutoloader
+app/etc/Inviqa_ComposerAutoloader.xml public/app/etc/Inviqa_ComposerAutoloader.xml
