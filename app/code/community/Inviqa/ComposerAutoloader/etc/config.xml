@@ -5,20 +5,22 @@
         </Inviqa_ComposerAutoloader>
     </modules>
     <global>
-        <resources>
-            <composerautoloader_setup>
-                <setup>
-                    <module>Inviqa_ComposerAutoloader</module>
-                </setup>
-            </composerautoloader_setup>
-        </resources>
+        <models>
+            <inviqa_composer_autoload>
+                <class>Inviqa_ComposerAutoloader_Model</class>
+            </inviqa_composer_autoload>
+        </models>
+        <helpers>
+            <inviqa_composer_autoload>
+                <class>Inviqa_ComposerAutoloader_Helper</class>
+            </inviqa_composer_autoload>
+        </helpers>
         <events>
             <resource_get_tablename>
                 <observers>
                     <magento_startup_observer>
-                        <type>singleton</type>
-                        <class>Inviqa_ComposerAutoloader_Model_Observer</class>
-                        <method>initialise</method>
+                        <class>inviqa_composer_autoload/observer</class>
+                        <method>includeAutoloader</method>
                     </magento_startup_observer>
                 </observers>
             </resource_get_tablename>
@@ -26,32 +28,9 @@
     </global>
     <default>
         <composer>
-            <composerautoloader>
-                <composerautoloader_path>../vendor/autoload.php</composerautoloader_path>
-            </composerautoloader>
+            <options>
+                <composerautoloader_path><![CDATA[../vendor/autoload.php]]></composerautoloader_path>
+            </options>
         </composer>
     </default>
-
-    <adminhtml>
-        <acl>
-            <resources>
-                <admin>
-                    <children>
-                        <system>
-                            <children>
-                                <config>
-                                    <children>
-                                        <composer>
-                                            <title>Composer</title>
-                                        </composer>
-                                    </children>
-                                </config>
-                            </children>
-                        </system>
-                    </children>
-                </admin>
-            </resources>
-        </acl>
-    </adminhtml>
-
 </config>
